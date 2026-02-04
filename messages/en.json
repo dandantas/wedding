@@ -1,0 +1,79 @@
+{
+  "navigation": {
+    "home": "Home",
+    "story": "Our Story",
+    "event": "Event",
+    "rsvp": "RSVP",
+    "gifts": "Gifts"
+  },
+  "hero": {
+    "subtitle": "We're Getting Married",
+    "coupleNames": "Carolina & Daniel",
+    "date": "June 06, 2026",
+    "location": "Brasília, DF",
+    "countdown": {
+      "days": "Days",
+      "hours": "Hours",
+      "minutes": "Minutes",
+      "seconds": "Seconds"
+    },
+    "scroll": "Scroll"
+  },
+  "story": {
+    "label": "Our Journey",
+    "title": "Our Story",
+    "events": {
+      "howWeMet": {
+        "year": "2020",
+        "title": "How We Met",
+        "description": "Our paths crossed at a mutual friend's dinner party. Little did we know that this chance meeting would change our lives forever."
+      },
+      "firstTrip": {
+        "year": "2022",
+        "title": "First Trip Together",
+        "description": "We took our first adventure to Paris, where we fell even more deeply in love walking along the Seine."
+      },
+      "proposal": {
+        "year": "2025",
+        "title": "The Proposal",
+        "description": "On a beautiful autumn evening, surrounded by golden leaves and the setting sun, the question was asked and answered with joy."
+      }
+    }
+  },
+  "event": {
+    "label": "Save The Date",
+    "title": "Event Details",
+    "date": "June 15, 2026",
+    "ceremony": {
+      "type": "Ceremony",
+      "time": "4:00 PM",
+      "venue": "St. Patrick's Cathedral",
+      "address": "5th Avenue, New York, NY 10022",
+      "description": "Join us as we exchange our vows in this beautiful historic cathedral."
+    },
+    "reception": {
+      "type": "Reception",
+      "time": "6:30 PM",
+      "venue": "The Plaza Hotel",
+      "address": "768 5th Avenue, New York, NY 10019",
+      "description": "Dinner, dancing, and celebration will follow at the magnificent Plaza Hotel."
+    }
+  },
+  "rsvp": {
+    "label": "Will You Join Us?",
+    "title": "RSVP",
+    "description": "We would be honored to have you celebrate this special day with us. Please let us know if you'll be attending by May 15, 2026.",
+    "button": "Respond Now",
+    "comingSoon": "(RSVP form coming soon)"
+  },
+  "gifts": {
+    "label": "Your Presence Is Our Present",
+    "title": "Gift Registry",
+    "description": "Your presence at our wedding is the greatest gift of all. However, if you wish to honor us with a gift, we have created a registry for your convenience.",
+    "button": "View Registry",
+    "comingSoon": "(Gift registry coming soon)"
+  },
+  "footer": {
+    "madeWith": "Made with love"
+  }
+}

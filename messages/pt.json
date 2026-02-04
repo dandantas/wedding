@@ -1,0 +1,79 @@
+{
+  "navigation": {
+    "home": "Início",
+    "story": "Nossa História",
+    "event": "Evento",
+    "rsvp": "Confirmar Presença",
+    "gifts": "Presentes"
+  },
+  "hero": {
+    "subtitle": "Vamos Casar",
+    "coupleNames": "Carolina & Daniel",
+    "date": "06 de Junho de 2026",
+    "location": "Brasília, DF",
+    "countdown": {
+      "days": "Dias",
+      "hours": "Horas",
+      "minutes": "Minutos",
+      "seconds": "Segundos"
+    },
+    "scroll": "Role"
+  },
+  "story": {
+    "label": "Nossa Jornada",
+    "title": "Nossa História",
+    "events": {
+      "howWeMet": {
+        "year": "2020",
+        "title": "Como Nos Conhecemos",
+        "description": "Nossos caminhos se cruzaram em um jantar de amigos. Pouco sabíamos que esse encontro casual mudaria nossas vidas para sempre."
+      },
+      "firstTrip": {
+        "year": "2022",
+        "title": "Primeira Viagem Juntos",
+        "description": "Fizemos nossa primeira aventura a Paris, onde nos apaixonamos ainda mais caminhando às margens do Sena."
+      },
+      "proposal": {
+        "year": "2025",
+        "title": "O Pedido",
+        "description": "Em uma linda noite de outono, cercados por folhas douradas e o pôr do sol, a pergunta foi feita e respondida com alegria."
+      }
+    }
+  },
+  "event": {
+    "label": "Reserve a Data",
+    "title": "Detalhes do Evento",
+    "date": "06 de Junho de 2026",
+    "ceremony": {
+      "type": "Cerimônia",
+      "time": "16:00",
+      "venue": "Catedral de St. Patrick",
+      "address": "5th Avenue, New York, NY 10022",
+      "description": "Junte-se a nós enquanto trocamos nossos votos nesta bela catedral histórica."
+    },
+    "reception": {
+      "type": "Recepção",
+      "time": "18:30",
+      "venue": "The Plaza Hotel",
+      "address": "768 5th Avenue, New York, NY 10019",
+      "description": "Jantar, dança e celebração seguirão no magnífico Plaza Hotel."
+    }
+  },
+  "rsvp": {
+    "label": "Você Virá?",
+    "title": "Confirmar Presença",
+    "description": "Seria uma honra ter você celebrando este dia especial conosco. Por favor, nos avise se você comparecerá até 15 de Maio de 2026.",
+    "button": "Confirmar Agora",
+    "comingSoon": "(Formulário de confirmação em breve)"
+  },
+  "gifts": {
+    "label": "Sua Presença é Nosso Presente",
+    "title": "Lista de Presentes",
+    "description": "Sua presença em nosso casamento é o maior presente de todos. No entanto, se você deseja nos presentear, criamos uma lista para sua conveniência.",
+    "button": "Ver Lista",
+    "comingSoon": "(Lista de presentes em breve)"
+  },
+  "footer": {
+    "madeWith": "Feito com amor"
+  }
+}
