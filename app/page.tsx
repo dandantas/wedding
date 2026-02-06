@@ -2,13 +2,18 @@
 
 import { TZDate } from "@date-fns/tz";
 import { motion } from "motion/react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import Image from "next/image";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 // import HeroImage from '@/public/hero_image.webp'
-import HeroImage from '@/public/IMG_8311.jpg'
+import HeroImage from '@/public/HERO_IMG.jpg'
 
 // Wedding date: June 6, 2026 at 15:30 in Brasilia, Brazil (America/Sao_Paulo timezone)
 const WEDDING_DATE = new TZDate(2026, 5, 6, 15, 30, 0, "America/Sao_Paulo");
@@ -169,6 +174,10 @@ function Navigation() {
 // Hero Section
 function HeroSection() {
   const t = useTranslations("hero");
+  const heroRef = useRef<HTMLElement>(null);
+  const countRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const prevValues = useRef<number[]>([0, 0, 0, 0]);
+
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -202,70 +211,120 @@ function HeroSection() {
     { value: timeLeft.seconds, label: t("countdown.seconds") },
   ];
 
+  // GSAP Timeline entrance animation
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({ delay: 0.3 });
+
+      tl.from(".hero-subtitle", {
+        y: 20,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power2.out",
+      })
+        .from(
+          ".hero-title",
+          { y: 30, opacity: 0, duration: 0.8, ease: "power2.out" },
+          "-=0.3"
+        )
+        .from(
+          ".hero-line",
+          { scaleX: 0, duration: 0.5, ease: "power2.out" },
+          "-=0.4"
+        )
+        .from(
+          ".hero-date",
+          { y: 20, opacity: 0, duration: 0.6, ease: "power2.out" },
+          "-=0.3"
+        )
+        .from(
+          ".hero-countdown",
+          { y: 30, opacity: 0, duration: 0.6, ease: "power2.out" },
+          "-=0.3"
+        );
+
+      // Subtle parallax on hero background image
+      gsap.to(".hero-bg", {
+        yPercent: 15,
+        ease: "none",
+        scrollTrigger: {
+          trigger: "#home",
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+    },
+    { scope: heroRef }
+  );
+
+  // Animate countdown number changes
+  useEffect(() => {
+    const values = [
+      timeLeft.days,
+      timeLeft.hours,
+      timeLeft.minutes,
+      timeLeft.seconds,
+    ];
+    values.forEach((value, i) => {
+      if (prevValues.current[i] !== value && countRefs.current[i]) {
+        gsap.fromTo(
+          countRefs.current[i],
+          { y: -8, opacity: 0.5 },
+          { y: 0, opacity: 1, duration: 0.3, ease: "power2.out" }
+        );
+      }
+      prevValues.current[i] = value;
+    });
+  }, [timeLeft.days, timeLeft.hours, timeLeft.minutes, timeLeft.seconds]);
+
   return (
     <section
+      ref={heroRef}
       id="home"
       className="relative flex min-h-screen items-center justify-center overflow-hidden"
     >
       {/* Hero Background Image */}
-      <Image
-        src={HeroImage}
-        alt="Hero background"
-        fill
-        priority
-        placeholder="blur"
-        className="object-cover"
-        sizes="100vw"
-      />
+      <div className="hero-bg absolute inset-0 overflow-hidden">
+        <Image
+          src={HeroImage}
+          alt="Hero background"
+          fill
+          priority
+          placeholder="blur"
+          className="object-cover "
+          sizes="100vw"
+        />
+      </div>
 
       {/* Dark overlay for text readability */}
       <div className="absolute inset-0 bg-black/40" />
 
       <div className="relative z-10 px-4 text-center text-white">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="font-engravers mb-4 text-sm font-medium uppercase tracking-[0.3em] text-white/80 md:text-base"
-        >
+        <p className="hero-subtitle font-engravers mb-4 text-sm font-medium uppercase tracking-[0.3em] text-white/80 md:text-base">
           {t("subtitle")}
-        </motion.p>
+        </p>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mb-6 font-billa text-3xl font-semibold leading-tight md:text-7xl lg:text-8xl"
-        >
+        <h1 className="hero-title mb-6 font-billa text-3xl font-semibold leading-tight md:text-7xl lg:text-8xl">
           {t("coupleNames")}
-        </motion.h1>
+        </h1>
 
-        <motion.div
-          initial={{ opacity: 0, scaleX: 0 }}
-          animate={{ opacity: 1, scaleX: 1 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mx-auto mb-8 h-px w-24 md:w-32"
-        />
+        <div className="hero-line mx-auto mb-8 h-px w-24 origin-center bg-white/50 md:w-32" />
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1 }}
-          className="mb-12 font-engravers text-lg font-light tracking-wide md:text-2xl lg:text-3xl"
-        >
+        <p className="hero-date mb-12 font-engravers text-lg font-light tracking-wide md:text-2xl lg:text-3xl">
           {t("date")} | {t("location")}
-        </motion.p>
+        </p>
 
         {/* Countdown */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.2 }}
-          className="mb-16 flex justify-center gap-4 md:gap-8 font-engravers"
-        >
-          {countdownItems.map((item) => (
+        <div className="hero-countdown mb-16 flex justify-center gap-4 font-engravers md:gap-8">
+          {countdownItems.map((item, index) => (
             <div key={item.label} className="text-center">
-              <div className="mb-1 text-3xl font-light md:text-5xl">
+              <div
+                ref={(el) => {
+                  countRefs.current[index] = el;
+                }}
+                className="mb-1 text-3xl font-light md:text-5xl"
+              >
                 {String(item.value).padStart(2, "0")}
               </div>
               <div className="text-xs uppercase tracking-wider text-white/70 md:text-sm">
@@ -273,39 +332,7 @@ function HeroSection() {
               </div>
             </div>
           ))}
-        </motion.div>
-
-        {/* Scroll indicator */}
-        {/* <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1.4 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}
-            className="flex flex-col items-center"
-          >
-            <span className="mb-2 text-xs uppercase tracking-wider text-white/60">
-              {t("scroll")}
-            </span>
-            <svg
-              className="h-6 w-6 text-white/60"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-                d="M19 14l-7 7m0 0l-7-7m7 7V3"
-              />
-            </svg>
-          </motion.div>
-        </motion.div> */}
+        </div>
       </div>
     </section>
   );
