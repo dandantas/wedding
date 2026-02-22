@@ -1,40 +1,52 @@
 @import "tailwindcss";
 
 :root {
-  /* Wedding Color Palette */
-  --color-primary: #d4a574;    /* Gold/Champagne */
-  --color-secondary: #8b7355;  /* Warm Brown */
-  --color-accent: #f5f0eb;     /* Cream */
-  --color-text: #2d2a26;       /* Dark Brown */
-  --color-text-light: #6b6560; /* Light Brown */
-  --color-white: #ffffff;
-  --color-gold-light: #e8d5c4; /* Light Gold */
-  
-  /* Legacy variables */
+  /* Wedding Color Palette — converted from CMYK */
+  --color-crimson: #B31000;
+  --color-rust: #CE4000;
+  --color-tangerine: #FA5900;
+  --color-amber: #FCA60F;
+  --color-cream: #E6DBAB;
+  --color-marigold: #FCD133;
+  --color-sage: #B3C28C;
+  --color-olive: #839D2D;
+  --color-forest: #4E6402;
+  --color-forest-dark: #1F250B;
+  --color-burgundy: #510116;
+  --color-plum: #7B2448;
+  --color-dusty-rose: #AE678C;
+  --color-meadow: #c3e5c9;
+
   --background: #ffffff;
-  --foreground: #2d2a26;
+  --foreground: #1F250B;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-serif: var(--font-playfair);
-  --font-billa: var(--font-billa-mount);
-  --font-engravers: var(--font-engravers-gothic);
-  
-  /* Wedding colors as Tailwind colors */
-  --color-primary: #d4a574;
-  --color-secondary: #8b7355;
-  --color-accent: #f5f0eb;
-  --color-gold-light: #e8d5c4;
+  --font-body: var(--font-baskervville);
+  --font-script: var(--font-luxurious-script);
+
+  --color-crimson: #B31000;
+  --color-rust: #CE4000;
+  --color-tangerine: #FA5900;
+  --color-amber: #FCA60F;
+  --color-cream: #E6DBAB;
+  --color-marigold: #FCD133;
+  --color-sage: #B3C28C;
+  --color-olive: #839D2D;
+  --color-forest: #4E6402;
+  --color-forest-dark: #1F250B;
+  --color-burgundy: #510116;
+  --color-plum: #7B2448;
+  --color-dusty-rose: #AE678C;
+  --color-meadow: #c3e5c9;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #1a1815;
-    --foreground: #f5f0eb;
+    --background: #1F250B;
+    --foreground: #E6DBAB;
   }
 }
 
@@ -46,13 +58,13 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), Georgia, "Times New Roman", serif;
 }
 
 /* Custom selection color */
 ::selection {
-  background-color: var(--color-primary);
-  color: var(--color-white);
+  background-color: var(--color-amber);
+  color: #ffffff;
 }
 
 /* Custom scrollbar for webkit browsers */
@@ -61,14 +73,15 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-accent);
+  background: var(--color-cream);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-primary);
+  background: var(--color-amber);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-secondary);
+  background: var(--color-rust);
 }
+

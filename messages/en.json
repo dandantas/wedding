@@ -3,8 +3,11 @@
     "home": "Home",
     "story": "Our Story",
     "event": "Event",
+    "photos": "Photos",
     "rsvp": "RSVP",
-    "gifts": "Gifts"
+    "gifts": "Gifts",
+    "attire": "Attire",
+    "location": "Location"
   },
   "hero": {
     "subtitle": "We're Getting Married",
@@ -63,15 +66,128 @@
     "label": "Will You Join Us?",
     "title": "RSVP",
     "description": "We would be honored to have you celebrate this special day with us. Please let us know if you'll be attending by May 15, 2026.",
-    "button": "Respond Now",
-    "comingSoon": "(RSVP form coming soon)"
+    "steps": {
+      "guest": "Guest",
+      "attendance": "Attendance",
+      "details": "Companions",
+      "message": "Message"
+    },
+    "form": {
+      "selectGuest": "Find Your Name",
+      "searchPlaceholder": "Type your name to search...",
+      "guestNotFound": "Name not found. Please contact us if you believe this is an error.",
+      "existingRsvp": "You've already responded. Feel free to update your response.",
+      "loadingGuests": "Loading guest list...",
+      "loadError": "Could not load guest list. Please try again.",
+      "attending": "Will you be joining us?",
+      "attendingYes": "Joyfully Accept",
+      "attendingNo": "Regretfully Decline",
+      "companions": "Number of Companions",
+      "companionsDescription": "How many guests will you be bringing?",
+      "message": "Message to the Couple",
+      "messagePlaceholder": "Share your warm wishes with us...",
+      "next": "Continue",
+      "back": "Back",
+      "submit": "Send RSVP",
+      "update": "Update RSVP"
+    },
+    "validation": {
+      "guestRequired": "Please select your name from the list"
+    },
+    "success": {
+      "title": "Thank You!",
+      "attending": "We can't wait to celebrate with you!",
+      "notAttending": "We'll miss you! Thank you for letting us know.",
+      "another": "Submit Another Response"
+    },
+    "error": {
+      "title": "Something went wrong",
+      "description": "Please try again later or contact us directly.",
+      "retry": "Try Again"
+    }
+  },
+  "attire": {
+    "label": "What to Wear",
+    "title": "Guest Attire",
+    "description": "We kindly request that our guests dress in semi-formal attire for our celebration.",
+    "dressCode": "Semi-Formal",
+    "men": {
+      "title": "For Him",
+      "description": "A suit or blazer with dress pants and a tie or pocket square. Dress shoes are recommended."
+    },
+    "women": {
+      "title": "For Her",
+      "description": "A cocktail dress, elegant jumpsuit, or a dressy skirt and blouse combination. Heels or dressy flats are recommended. For comfort on the garden grounds, we suggest block heels."
+    },
+    "note": "Please avoid jeans, sneakers, and overly casual attire. When in doubt, lean towards more formal."
+  },
+  "location": {
+    "label": "Where to Find Us",
+    "title": "Our Venue",
+    "venue": "Recanto das Águas",
+    "address": "DF-140, Brasília - DF, Brazil",
+    "description": "Nestled in the lush surroundings south of Brasília, our celebration will take place at this beautiful and charming venue.",
+    "directions": "Get Directions",
+    "mapTitle": "Map to Recanto das Águas venue"
   },
   "gifts": {
     "label": "Your Presence Is Our Present",
     "title": "Gift Registry",
     "description": "Your presence at our wedding is the greatest gift of all. However, if you wish to honor us with a gift, we have created a registry for your convenience.",
-    "button": "View Registry",
-    "comingSoon": "(Gift registry coming soon)"
+    "loading": "Loading gifts...",
+    "empty": "No gifts available at the moment.",
+    "errorLoading": "Failed to load gifts. Please try again.",
+    "retry": "Try Again",
+    "suggested": "Suggested",
+    "giftThis": "Gift This",
+    "amount": {
+      "title": "Choose Your Amount",
+      "suggested": "Suggested: {amount}",
+      "custom": "Custom Amount",
+      "customPlaceholder": "Enter amount in R$",
+      "minimum": "Minimum: R$1.00",
+      "continue": "Continue"
+    },
+    "form": {
+      "title": "Your Details",
+      "name": "Full Name",
+      "namePlaceholder": "Enter your full name",
+      "email": "Email Address",
+      "emailPlaceholder": "your@email.com",
+      "phone": "Phone Number",
+      "phonePlaceholder": "+55 (11) 99999-9999",
+      "taxId": "CPF/CNPJ",
+      "taxIdPlaceholder": "000.000.000-00",
+      "message": "Message to the Couple",
+      "messagePlaceholder": "Share your warm wishes...",
+      "back": "Back",
+      "pay": "Proceed to Payment"
+    },
+    "validation": {
+      "nameRequired": "Please enter your name",
+      "emailRequired": "Please enter your email",
+      "emailInvalid": "Please enter a valid email address",
+      "taxIdRequired": "CPF/CNPJ is required for payment",
+      "amountMin": "Minimum amount is R$1.00"
+    },
+    "checkout": {
+      "processing": "Creating your payment...",
+      "redirecting": "Redirecting to payment page..."
+    },
+    "success": {
+      "title": "Thank You!",
+      "description": "Your generous gift means the world to us. Thank you for your kindness!",
+      "backToGifts": "Back to Gifts"
+    },
+    "error": {
+      "title": "Something went wrong",
+      "description": "We couldn't process your payment. Please try again.",
+      "retry": "Try Again"
+    }
+  },
+  "gallery": {
+    "label": "Our Moments",
+    "title": "Gallery"
   },
   "footer": {
     "madeWith": "Made with love"

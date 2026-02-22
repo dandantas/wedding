@@ -3,8 +3,11 @@
     "home": "Início",
     "story": "Nossa História",
     "event": "Evento",
+    "photos": "Fotos",
     "rsvp": "Confirmar Presença",
-    "gifts": "Presentes"
+    "gifts": "Presentes",
+    "attire": "Traje",
+    "location": "Localização"
   },
   "hero": {
     "subtitle": "Vamos Casar",
@@ -60,18 +63,131 @@
     }
   },
   "rsvp": {
-    "label": "Você Virá?",
+    "label": "RSVP",
     "title": "Confirmar Presença",
-    "description": "Seria uma honra ter você celebrando este dia especial conosco. Por favor, nos avise se você comparecerá até 15 de Maio de 2026.",
-    "button": "Confirmar Agora",
-    "comingSoon": "(Formulário de confirmação em breve)"
+    "description": "Seria uma honra ter você celebrando este dia especial conosco. Por favor, nos avise se você comparecerá.",
+    "steps": {
+      "guest": "Convidado",
+      "attendance": "Presença",
+      "details": "Acompanhantes",
+      "message": "Mensagem"
+    },
+    "form": {
+      "selectGuest": "Encontre Seu Nome",
+      "searchPlaceholder": "Digite seu nome para buscar...",
+      "guestNotFound": "Nome não encontrado. Entre em contato conosco se acredita que isso é um erro.",
+      "existingRsvp": "Você já respondeu. Fique à vontade para atualizar sua resposta.",
+      "loadingGuests": "Carregando lista de convidados...",
+      "loadError": "Não foi possível carregar a lista. Tente novamente.",
+      "attending": "Você estará presente?",
+      "attendingYes": "Aceito",
+      "attendingNo": "Infelizmente Não Poderei",
+      "companions": "Número de Acompanhantes",
+      "companionsDescription": "Quantos convidados você levará?",
+      "message": "Mensagem para o Casal",
+      "messagePlaceholder": "Compartilhe seus votos de felicidades conosco...",
+      "next": "Continuar",
+      "back": "Voltar",
+      "submit": "Enviar Confirmação",
+      "update": "Atualizar Confirmação"
+    },
+    "validation": {
+      "guestRequired": "Por favor, selecione seu nome na lista"
+    },
+    "success": {
+      "title": "Obrigado!",
+      "attending": "Mal podemos esperar para celebrar com você!",
+      "notAttending": "Sentiremos sua falta! Obrigado por nos avisar.",
+      "another": "Enviar Outra Resposta"
+    },
+    "error": {
+      "title": "Algo deu errado",
+      "description": "Por favor, tente novamente mais tarde ou entre em contato conosco.",
+      "retry": "Tentar Novamente"
+    }
+  },
+  "attire": {
+    "label": "O Que Vestir",
+    "title": "Traje",
+    "description": "Pedimos gentilmente que nossos convidados vistam traje passeio completo para nossa celebração.",
+    "dressCode": "Passeio Completo",
+    "men": {
+      "title": "Para Ele",
+      "description": "Terno ou blazer com calça social e gravata ou lenço de bolso. Sapatos sociais são recomendados."
+    },
+    "women": {
+      "title": "Para Ela",
+      "description": "Vestido de coquetel, macacão elegante ou uma combinação de saia e blusa sofisticada. Saltos ou sapatilhas elegantes são recomendados. Para conforto nos jardins, sugerimos salto bloco."
+    },
+    "note": "Para conforto nos jardins, sugerimos salto bloco."
+  },
+  "location": {
+    "label": "Como Chegar",
+    "title": "Localização",
+    "venue": "Recanto das Águas",
+    "address": "DF-140, Brasília - DF, Brasil",
+    "description": "Em meio à natureza exuberante ao sul de Brasília, nossa celebração acontecerá neste espaço lindo e encantador.",
+    "directions": "Ver no Mapa",
+    "mapTitle": "Mapa para o espaço Recanto das Águas"
   },
   "gifts": {
-    "label": "Sua Presença é Nosso Presente",
+    "label": "Presentes",
     "title": "Lista de Presentes",
-    "description": "Sua presença em nosso casamento é o maior presente de todos. No entanto, se você deseja nos presentear, criamos uma lista para sua conveniência.",
-    "button": "Ver Lista",
-    "comingSoon": "(Lista de presentes em breve)"
+    "description": "Sua presença em nosso casamento é o maior presente de todos. No entanto, se você deseja nos presentear, criamos uma lista para você fazer parte da nossa viagem de lua de mel.",
+    "loading": "Carregando presentes...",
+    "empty": "Nenhum presente disponível no momento.",
+    "errorLoading": "Não foi possível carregar os presentes. Tente novamente.",
+    "retry": "Tentar Novamente",
+    "suggested": "Sugerido",
+    "giftThis": "Presentear",
+    "amount": {
+      "title": "Escolha o Valor",
+      "suggested": "Sugerido: {amount}",
+      "custom": "Valor Personalizado",
+      "customPlaceholder": "Digite o valor em R$",
+      "minimum": "Mínimo: R$1,00",
+      "continue": "Continuar"
+    },
+    "form": {
+      "title": "Seus Dados",
+      "name": "Nome Completo",
+      "namePlaceholder": "Digite seu nome completo",
+      "email": "Endereço de Email",
+      "emailPlaceholder": "seu@email.com",
+      "phone": "Telefone",
+      "phonePlaceholder": "+55 (11) 99999-9999",
+      "taxId": "CPF/CNPJ",
+      "taxIdPlaceholder": "000.000.000-00",
+      "message": "Mensagem para o Casal",
+      "messagePlaceholder": "Compartilhe seus votos de felicidades...",
+      "back": "Voltar",
+      "pay": "Ir para Pagamento"
+    },
+    "validation": {
+      "nameRequired": "Por favor, digite seu nome",
+      "emailRequired": "Por favor, digite seu email",
+      "emailInvalid": "Por favor, digite um email válido",
+      "taxIdRequired": "CPF/CNPJ é obrigatório para pagamento",
+      "amountMin": "O valor mínimo é R$1,00"
+    },
+    "checkout": {
+      "processing": "Criando seu pagamento...",
+      "redirecting": "Redirecionando para a página de pagamento..."
+    },
+    "success": {
+      "title": "Obrigado!",
+      "description": "Seu presente generoso significa muito para nós. Obrigado pela sua gentileza!",
+      "backToGifts": "Voltar aos Presentes"
+    },
+    "error": {
+      "title": "Algo deu errado",
+      "description": "Não foi possível processar seu pagamento. Tente novamente.",
+      "retry": "Tentar Novamente"
+    }
+  },
+  "gallery": {
+    "label": "Nossos Momentos",
+    "title": "Galeria"
   },
   "footer": {
     "madeWith": "Feito com amor"

@@ -1,0 +1,63 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Guest {
+  id            String   @id @default(cuid())
+  name          String
+  email         String?  @unique
+  phone         String?
+  maxCompanions Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  rsvp          Rsvp?
+}
+
+model Rsvp {
+  id             String   @id @default(cuid())
+  guestId        String   @unique
+  guest          Guest    @relation(fields: [guestId], references: [id])
+  attending      Boolean
+  companionCount Int      @default(0)
+  message        String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Gift {
+  id             String        @id @default(cuid())
+  name           String
+  nameEn         String
+  description    String?
+  descriptionEn  String?
+  imageUrl       String?
+  suggestedPrice Int
+  active         Boolean       @default(true)
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+  payments       GiftPayment[]
+}
+
+model GiftPayment {
+  id            String    @id @default(cuid())
+  giftId        String
+  gift          Gift      @relation(fields: [giftId], references: [id])
+  amount        Int
+  status        String    @default("PENDING")
+  billingId     String?   @unique
+  billingUrl    String?
+  guestName     String
+  guestEmail    String
+  guestPhone    String?
+  guestTaxId    String
+  paymentMethod String?
+  message       String?
+  paidAt        DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
